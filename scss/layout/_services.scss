@@ -1,0 +1,173 @@
+$border: 2px;
+$transition-time: .2s;
+$transition-function: cubic-bezier(.39, .45, .36, .98);
+
+.services {
+  background-color:  rgba($bg-color, .96);
+  text-align: center;
+  color: $color-secondary;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+
+@include max(500) {
+padding-top: 3rem;
+  padding-bottom: 6rem;
+}
+
+  &__heading {
+  }
+
+  &__sub-heading {
+    margin-bottom: 4rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    margin: auto;
+    width: 80%;
+
+    @include max(1400) {
+      width: 90%;
+    }
+    @include max(1300) {
+      width: 100%;
+    }
+
+    @include max(1000) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+
+    @include max(500) {
+    grid-template-columns: 1fr;
+    }
+
+
+  }
+
+  &__item__container {
+    background-color: $color-primary;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: box-shadow 3s ease-in-out;
+    backface-visibility: hidden;
+
+    &:hover {
+      box-shadow: 3px 3px 10px rgba($color-primary, 0.3);
+
+      .services__item {
+        transform: translate(-.8rem, -1rem);
+        border: none;
+
+
+        span:nth-child(odd) {
+          width: 100%;
+        }
+
+        span:nth-child(even) {
+          height: 100%;
+        }
+      }
+    }
+
+  }
+
+  &__item {
+    background-color: rgba($bg-color, 1);
+    padding: 4rem;
+    transition: transform $transition-time $transition-function;
+    transition-delay: $transition-time * 2.5;
+    width: 100%;
+    height: 100%;
+
+
+    &__icon {
+      font-size: 5rem;
+      color: $color-primary;
+    }
+
+    &__heading {
+      font-size: 2rem;
+    }
+
+    &__text {
+      line-height: 140%;
+    }
+
+    span {
+      position: absolute;
+      background-color: $color-primary;
+      height: 0;
+      width: 0;
+      margin-bottom: 0 !important;
+    }
+
+    .top {
+      top: 0;
+      left: 0;
+      height: $border;
+      transition: width $transition-time $transition-function;
+    }
+
+    .bottom {
+      bottom: 0;
+      right: 0;
+      height: $border;
+      transition: width $transition-time $transition-function;
+    }
+
+    .right {
+      top: 0;
+      right: 0;
+      width: $border;
+      transition: height $transition-time $transition-function;
+      transition-delay: $transition-time;
+    }
+
+
+    .left {
+      left: 0;
+      bottom: 0;
+      width: $border;
+      transition: height $transition-time $transition-function;
+      transition-delay: $transition-time;
+    }
+
+    *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+
+  }
+
+
+}
+
+/*.quote {
+  height: 50rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(rgba(black, .6), rgba(black, .6)), url("../img/q-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  &__heading {
+    color: $color-primary;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    color: $color-secondary;
+  }
+}*/
+
+

@@ -1,0 +1,27 @@
+.heading__secondary {
+  color: $color-primary;
+
+  font-size: 3.5rem;
+  letter-spacing: 1px;
+  margin-bottom: .4rem;
+  text-align: center;
+
+}
+
+.heading__tertiary {
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+
+}
+
+.sub-heading{
+  margin-bottom: 6rem;
+  font-size: 1.6rem;
+  text-align: center;
+
+  @include max(1000) {
+    margin-bottom: 3rem;
+
+  }
+
+}

@@ -1,0 +1,43 @@
+
+@mixin max($breakpoint) {
+  @media only screen and (max-width: ($breakpoint / 16) * 1em) {
+    @content;
+  }
+}
+
+@mixin min($breakpoint) {
+  @media only screen and (min-width: ($breakpoint / 16) * 1em) {
+    @content;
+  }
+}
+
+@mixin maxmin($breakpoint1, $breakpoint2) {
+  @media only screen and (max-width: ($breakpoint2 / 16) * 1em) and (min-width: ($breakpoint1 / 16) * 1em) {
+    @content;
+  }
+}
+
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-flex-y {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-flex-x {
+  display: flex;
+  justify-content: center;
+}

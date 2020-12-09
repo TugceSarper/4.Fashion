@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @include max(1400) {
+  font-size: 57.5%;
+  }
+
+  @include max(1200) {
+    font-size: 52.5%;
+  }
+
+  @include max(500) {
+  font-size: 50%;
+  }
+  
+}
+
+body {
+  font-family: $default-font;
+  font-size: $default-font-size;
+}
+
+.container{
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include max(1200) {
+  width: 90%;
+  }
+
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $font-heading;
+  font-weight: 300;
+}
+
+::selection{
+  background-color: rgba($color-primary, .8);
+  color: black;
+}

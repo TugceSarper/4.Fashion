@@ -1,0 +1,17 @@
+.footer {
+  color: $color-secondary;
+  background-color:  rgba($bg-color, 1);;
+  text-align: center;
+  margin-top: 15rem;
+  padding: 2rem 0;
+
+  @include max(1400) {
+    margin-top: 5rem;
+
+  }
+
+  @include center-flex;
+
+  &__text {
+  }
+}

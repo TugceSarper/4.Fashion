@@ -1,0 +1,111 @@
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgba(black, .9);
+  @include center-flex;
+  transform: scale(.75);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+
+
+  &.lightbox-open {
+    transform: scale(1);
+    pointer-events: all;
+    opacity: 1;
+  }
+
+
+  &__close-btn {
+    position: fixed;
+    right: 5rem;
+    top: 5rem;
+    @include center-flex;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+    backface-visibility: hidden;
+
+    &:hover {
+      &:before, &:after {
+        background-color: $color-secondary;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+      width: 100%;
+      height: 3px;
+      background: rgba($color-secondary, .5);
+      position: absolute;
+      border-radius: 10rem;
+      transition: background-color .2s;
+      backface-visibility: hidden;
+
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+  }
+
+
+  &__picture {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  &__img {
+    &::selection {
+      background-color: transparent;
+    }
+
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+  }
+
+  &__control-btn {
+    width: 3rem;
+    height: 3rem;
+    border-left: 2px solid rgba($color-secondary, .5);
+    border-top: 2px solid rgba($color-secondary, .5);
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 200;
+
+
+    &:hover {
+      border-left: 2px solid $color-secondary;
+      border-top: 2px solid $color-secondary;
+    }
+  }
+
+  &__prev {
+    transform: rotate(-45deg) translateY(-50%);
+    left: 5rem;
+  }
+
+  &__next {
+    transform: rotate(135deg) translateY(-50%);
+    right: 5rem;
+  }
+
+}
